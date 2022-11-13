@@ -15,3 +15,11 @@ Augmented data structure modify an existing data structure to store additional i
 4. Adjust odd operations.
   When each element stored more information in the new data structure, the information needs to update with the opeartions
   Therefore, we need to modify or add the new information update based on original data structure operations.
+### Augemented a AVL tree by Binary Search tree.
+1. we decide to use BST to implement the AVL tree.
+2. what additional information and operations ?
+- height(Tree.node)(avl tree needs to caculate the balance factor for each nodes)
+- rebalance(Tree.node)(each node rotates with each others, and it should follow the avl priority)
+- rotate(Tree.node)
+- insert/delete(Tree.node) (each node hight needs to maintain in the two operations.)
+3. 
