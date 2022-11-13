@@ -22,4 +22,6 @@ Augmented data structure modify an existing data structure to store additional i
 - rebalance(Tree.node)(each node rotates with each others, and it should follow the avl priority)
 - rotate(Tree.node)
 - insert/delete(Tree.node) (each node hight needs to maintain in the two operations.)
-3. 
+### Augemented a Orderset by AVL tree
+1. we decide to use AVL tree to implement the Orderset.
+2. what additional information and operations ?
