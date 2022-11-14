@@ -25,3 +25,7 @@ Augmented data structure modify an existing data structure to store additional i
 ### Augemented a Orderset by AVL tree
 1. we decide to use AVL tree to implement the Orderset.
 2. what additional information and operations ?
+- rank(k), input a element, return its rank
+- select(r), input a rank, return its element
+- Example, {27,50,15,9,34,12} rank(34) = 5, select(3) =5
+#### First attmept without any addition of information
