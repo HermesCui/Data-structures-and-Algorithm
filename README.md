@@ -29,4 +29,21 @@ Augmented data structure modify an existing data structure to store additional i
 - select(r), input a rank, return its element
 - Example, {27,50,15,9,34,12} rank(34) = 5, select(3) =5
 #### First attmept without any addition of information
-![avl image](/image/image1.png)
+![avl image](/Users/hermes/Desktop/Data-structures-and-Algorithm/image/image1.png)
+rank(30) = 4
+select(8) = 38
+Since this is avl tree, search/insert/delete $\in \theta(logn)$.
+1. rank(k): we need to find how many elements are less than the k.
+Therefore, the avl tree will traversal elements that less than k to arrive the k, the rank(k) $\in \theta(n)$
+2. select(r): we need to find how $r_{th}$ largest element.
+Therefore, the avl tree will traversal r-1 elements to arrive the $r_{th}$ largest elemet, the select(r) $\in \theta(n)$
+#### The Optimize for first attempt
+1. The rank serve as the additional information for each nodes
+2. ![avl image with rank](/Users/hermes/Desktop/Data-structures-and-Algorithm/image/image2.png)
+3. When we store the rank for each nodes, it is similar to build a new avl tree inside original avl tree.
+4. Therefore, select(r) is same with the basic avl search operation, its time complexity $\in \theta(logn)$.
+5. rank(k) just call one select(r), its time complexity $\in \theta(logn)$.
+6. insert/delet update the rank.
+#### Third attempt with storing subtree size for each node.
+![avl image with count](/Users/hermes/Desktop/Data-structures-and-Algorithm/image/image3.png)
+
