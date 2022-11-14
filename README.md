@@ -29,3 +29,4 @@ Augmented data structure modify an existing data structure to store additional i
 - select(r), input a rank, return its element
 - Example, {27,50,15,9,34,12} rank(34) = 5, select(3) =5
 #### First attmept without any addition of information
+![avl image](/image/image1.png)
