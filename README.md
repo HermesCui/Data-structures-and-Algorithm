@@ -25,13 +25,20 @@ Augmented data structure modify an existing data structure to store additional i
 ### Augemented a Orderset by AVL tree
 1. we decide to use AVL tree to implement the Orderset.
 2. what additional information and operations ?
-  - rank(k), input a element, return its rank
-  - select(r), input a rank, return its element
-  - Example, {27,50,15,9,34,12} rank(34) = 5, select(3) =5
+  - `rank(k)`, input a element, return its rank
+  - `select(r)`, input a rank, return its element
+  - Example, {27,50,15,9,34,12} 
+  
+    rank(34) = 5,
+  
+    select(3) =5
 #### First attmept without any addition of information
 ![avl image](/image/image1.png)
+
 `rank(30) = 4`
+
 `select(8) = 38`
+
 Since this is avl tree, search/insert/delete $\in \theta(logn)$.
 1. `rank(k)`: we need to find how many elements are less than the k.
 Therefore, the avl tree will traversal elements that less than k to arrive the k, the rank(k) $\in \theta(n)$
@@ -47,4 +54,3 @@ Therefore, the avl tree will traversal r-1 elements to arrive the $r_{th}$ large
 #### Third attempt with storing subtree size for each node.
 ![avl image with count](/image/image3.png)
 
-// Test
