@@ -45,7 +45,7 @@ Therefore, the avl tree will traversal elements that less than k to arrive the k
 2. `select(r)`: we need to find how $r_{th}$ largest element.
 Therefore, the avl tree will traversal r-1 elements to arrive the $r_{th}$ largest elemet, the select(r) $\in \theta(n)$
 #### The Optimize for first attempt
-1. The rank serve as the additional information for each nodes
+1. The rank serve as the additional information for each node
 2. ![avl image with rank](/image/image2.png)
 3. When we store the rank for each nodes, it is similar to build a new avl tree inside original avl tree.
 4. Therefore, `select(r)` is same with the basic avl search operation, its time complexity $\in \theta(logn)$.
@@ -54,3 +54,13 @@ Therefore, the avl tree will traversal r-1 elements to arrive the $r_{th}$ large
 #### Third attempt with storing subtree size for each node.
 ![avl image with count](/image/image3.png)
 
+## Hash 
+All algorithm in the world is for processing data more efficiently. There are two kind of efficiency in the computer algorithm, and they are
+Time complexity and Space complexity. Before this section, we pursued the efficiency in the time complexity but not combined the space complexity.
+In order to the extreme time complexity, we must sacrifice the space complexity to trade in time complexity.
+
+### Direct-address tables
+What the meaning of "direct" in computer science? Easy way? Direct way?
+The direct-address tables is a direct way to store data without any optimization.
+For example, when we need to implement a ADT dictionary by the direct-address tables, we just store all
+data that we need in the set with unique key for each element. The `insert`,`delete`,`search` $\in O(1)$
