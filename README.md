@@ -62,5 +62,42 @@ In order to the extreme time complexity, we must sacrifice the space complexity 
 ### Direct-address tables
 What the meaning of "direct" in computer science? Easy way? Direct way?
 The direct-address tables is a direct way to store data without any optimization.
-For example, when we need to implement a ADT dictionary by the direct-address tables, we just store all
-data that we need in the set with unique key for each element. The `insert`,`delete`,`search` $\in O(1)$
+For example, when we need to implement an ADT dictionary by the direct-address tables, we just store all
+data that we need in the set with unique key for each element. The `insert`,`delete`,`search` $\in O(1)$, but the direct-address tables occupy huge space,
+which is not practical for implement when the number of elements is huge.
+
+### HashTable
+According to the direct-address tables, we can not guarantee that each data has unique key or the set of possible keys are small.
+Therefore, we need to optimize the direct-address tables as hash table, which makes the way that stores data generally.
+HashTable has "slot" or "bucket" as the space for each data, and a Hash function to produce the correspond key for each element.
+`Search(k)` -> find T[h(k)]
+
+`Insert(X)` -> Insert X.k into the T[h(X.key)]
+
+`Delete(X)` -> Remove X from T[h(X.key)]
+
+However, the |U| > the number of slots, which will lead to that one slot occupy more element, although they have same key.
+Therefore, there are two different addressing for the collision, open addressing and closed addressing.
+
+#### Closed addressing
+![hash](/image/image4.png)
+When the hash function produce the key, there are collisions  in closed addressing, we use the Doubly Linklist to connect each key.
+
+Worst Case
+
+`insert(x)`
+
+    -search x.key
+    -either replace or add x 
+    -$\in O(1)$
+
+`delete(x)`
+    
+    -search x.key
+    -remove node
+    -$\in O(1)$
+
+`search(x)`
+![hash](/image/image5.png)
+    -When there is so trash hash function, plug all key in one slot
+    -$\in O(n)$
