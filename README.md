@@ -99,5 +99,6 @@ Worst Case
 
 `search(x)`
 ![hash](/image/image5.png)
+
     -When there is so trash hash function, plug all key in one slot
     -$\in O(n)$
