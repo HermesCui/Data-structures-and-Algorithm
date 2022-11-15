@@ -81,6 +81,7 @@ Therefore, there are two different addressing for the collision, open addressing
 
 #### Closed addressing
 ![hash](/image/image4.png)
+
 When the hash function produce the key, there are collisions  in closed addressing, we use the Doubly Linklist to connect each key.
 
 Worst Case
@@ -102,3 +103,15 @@ Worst Case
 
     -When there is so trash hash function, plug all key in one slot
     -$\in O(n)$
+
+Let the m is the number of slots, and n are the number of keys that we need to plug in
+n/m is the load factor in the HashTable.\
+Assume we have a perfect hash function so that each node are uniform distribute in the HashTable.\
+when m > n, the average time complexity of `search(x)` $\in O(1)$. 
+
+We can explain it informal:\
+When m > n, which represents our has slots enough to store each node, and each will average distribute in the table. Hence, 
+the table must be not occupy fully and each slot only has one node.
+Therefore, the average time complexity of `search(x)` $\in O(1)$.\
+(If you would like to see the formal proof for the average time complexity of search, check CLRS chapter 11.3)
+#### Open addressing
