@@ -90,19 +90,20 @@ Worst Case
 
     -search x.key
     -either replace or add x 
-    -$\in O(1)$
+    -O(1)
 
 `delete(x)`
     
     -search x.key
     -remove node
-    -$\in O(1)$
+    -O(1)
 
-`search(x)`
 ![hash](/image/image5.png)
 
-    -When there is so trash hash function, plug all key in one slot
-    -$\in O(n)$
+`search(x)`
+
+    -When there is bad hash function, plug all key in one slot
+    -O(n)
 
 Let the m is the number of slots, and n are the number of keys that we need to plug in
 n/m is the load factor in the HashTable.\
@@ -115,7 +116,7 @@ the table must be not occupy fully and each slot only has one node.
 Therefore, the average time complexity of `search(x)` $\in O(1)$.\
 (If you would like to see the formal proof for the average time complexity of search, check CLRS chapter 11.3)
 #### Open addressing
-When there is collision,the strategy examine buckets one by one. If one slot is occupied, it will plug in the node into another slot.\
+When there is collision,the strategy examine buckets one by one. If one slot is occupied, it will plug in the node into next slot.\
 This process called probe. Besides, there are three ways to probe.\
 1. Linear probing\
     let H(k) is the original has function.\
@@ -129,3 +130,46 @@ However, there is special case to produce clusters.
    `H'(k,i) = (H1(k) +H2(k))%m`
    We use two hash function to prob each key, which can randomly separate each node.
 
+`Insert`
+
+    -search x.key
+    -either replace or add x
+    - O(1)
+
+`delete(x)`
+    
+    -search x.key
+    -remove node
+    - O(1)
+
+`search(x)`
+![hash](/image/image6.png)
+
+    -When there is bad hash function, plug all key in one slot
+    -O(n)
+   When h(k1) = h(k2) = h(kn) and we would like to search the kn, we need to call h(kn). Then the search will check the key from 1 to m-1, which leads to that the time complexity is O(n).
+
+##  QuickSort
+QuickSort is often the best practical choice for sorting because it is efficient and stable time complexity on the average thoguth its worst-case running time O(n^2) on an input array of n numbers.
+
+There three steps to implement the quicksort.
+
+Divide: We will pick a pivot as the divider of quicksort, the pivot is q in the A[p...q...r]. Then the A will be seprate to A[p..q-1] and A[q+1..r] such that all elements in A[p..q-1]are less than A[q] and all elements in A[q+1..r] are greater than A[q].
+
+Conquer: Sort the two subarrays A[p..q-1] and A[q+1..r] by the resursive method.
+
+Combine: just add the two sub array together, and the A[p..r] is sorted.
+
+### Performance of quicksort
+
+The partitioning plays a significant role in the running time performance. If the partitioning is balanced, the runing time will be asymptotically as fast as O(nlogn). If the partitioning is unbalanced, the runing time will be asymptotically as fast as O(n^2).
+
+In the worstcase (informal explaining), each partition splits one element each recusion, the whole array will partition n times with each partition $\in O(n)$.
+
+Therefore the time complexity of whole process will be O(n^2).
+
+In the bestcase(informal explaining), the partition will split the array into two balanced subarray by each recusion. Therefore, each the recusion will run at least O(logn) times with each partition O(n). The whole process will be O(nlogn).
+
+### A randomized version of quicksort 
+
+In order to reduce the probability of worst case in the quicksort.
