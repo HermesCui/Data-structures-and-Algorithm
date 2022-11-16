@@ -172,4 +172,14 @@ In the bestcase(informal explaining), the partition will split the array into tw
 
 ### A randomized version of quicksort 
 
-In order to reduce the probability of worst case in the quicksort.
+In order to reduce the probability of worst case in the quicksort in order to obtain good average performance.
+
+Therefore, there is a randomization technique, called random sampling. We will randomly chose element as the pivot.
+
+### Performance of randomized version of quicksort
+
+In the worst case, the probability of worst case in the quicksort is reduced, but it still exist the probaility of worst case in the randomized quicksort. Therefore, the running time will be O(n^2).
+
+In the best case, it is same with normal quicksort O(nlogn)
+
+In the average case, since, the probability of worst case approach 0, the average running time is O(nlogn).
